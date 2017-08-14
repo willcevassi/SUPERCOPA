@@ -16,7 +16,6 @@ namespace SuperCopa.DesktopApp
         }
 
 
-
         #region Operações de Crud
 
         public override void Novo()

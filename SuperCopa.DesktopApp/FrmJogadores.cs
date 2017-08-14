@@ -14,12 +14,6 @@ namespace SuperCopa.DesktopApp
         {
             InitializeComponent();
         }
-
-        public override void CarregarFormulario()
-        {
-           
-        }
-
         #region Operações de Crud
 
         public override void Novo()

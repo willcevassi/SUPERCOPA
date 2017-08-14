@@ -46,29 +46,36 @@ namespace SuperCopa.DesktopApp
 
         public virtual void CarregarFormulario() { }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        #region Barra de Ferramentas
+        private void tbtnNovo_Click(object sender, EventArgs e)
         {
-            this.Editar();
+            this.Novo();
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            this.Excluir();
-        }
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            this.Pesquisar();
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void tbtnSalvar_Click(object sender, EventArgs e)
         {
             this.Salvar();
         }
 
-        private void btnRelatorio_Click(object sender, EventArgs e)
+        private void tbtnExcluir_Click(object sender, EventArgs e)
+        {
+            this.Excluir();
+        }
+
+        private void tbtnPesquisar_Click(object sender, EventArgs e)
+        {
+            this.Pesquisar();
+        }
+
+        private void tbtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbtnGerarRelatorio_Click(object sender, EventArgs e)
         {
             this.GerarRelatorio();
         }
+        #endregion
     }
 }

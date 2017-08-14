@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtEndereco = new System.Windows.Forms.TextBox();
-            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.cbPosicao = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,78 +49,85 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Size = new System.Drawing.Size(640, 243);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Endereço:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Telefone:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(104, 21);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(442, 22);
-            this.txtNome.TabIndex = 3;
-            // 
-            // txtEndereco
-            // 
-            this.txtEndereco.Location = new System.Drawing.Point(104, 62);
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(442, 22);
-            this.txtEndereco.TabIndex = 4;
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(104, 103);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(236, 22);
-            this.txtTelefone.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 151);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Posição:";
+            this.panel2.Controls.SetChildIndex(this.label1, 0);
+            this.panel2.Controls.SetChildIndex(this.label2, 0);
+            this.panel2.Controls.SetChildIndex(this.label3, 0);
+            this.panel2.Controls.SetChildIndex(this.txtNome, 0);
+            this.panel2.Controls.SetChildIndex(this.txtEndereco, 0);
+            this.panel2.Controls.SetChildIndex(this.txtTelefone, 0);
+            this.panel2.Controls.SetChildIndex(this.label4, 0);
+            this.panel2.Controls.SetChildIndex(this.cbPosicao, 0);
             // 
             // cbPosicao
             // 
             this.cbPosicao.FormattingEnabled = true;
-            this.cbPosicao.Location = new System.Drawing.Point(104, 144);
+            this.cbPosicao.Location = new System.Drawing.Point(124, 181);
             this.cbPosicao.Name = "cbPosicao";
             this.cbPosicao.Size = new System.Drawing.Size(236, 24);
-            this.cbPosicao.TabIndex = 7;
+            this.cbPosicao.TabIndex = 15;
             // 
-            // FrmJogadores
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(49, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 17);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Posição:";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(124, 140);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(236, 22);
+            this.txtTelefone.TabIndex = 13;
+            // 
+            // txtEndereco
+            // 
+            this.txtEndereco.Location = new System.Drawing.Point(124, 99);
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Size = new System.Drawing.Size(442, 22);
+            this.txtEndereco.TabIndex = 12;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(124, 58);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(442, 22);
+            this.txtNome.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 145);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Telefone:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(38, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Endereço:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(62, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Nome:";
+            // 
+            // FrmJogadores2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(640, 310);
-            this.Name = "FrmJogadores";
+            this.ClientSize = new System.Drawing.Size(624, 361);
+            this.Name = "FrmJogadores2";
             this.Text = "Cadastro de Jogadores";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
