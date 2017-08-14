@@ -17,8 +17,6 @@ namespace SuperCopa.DesktopApp
             InitializeComponent();
         }
 
-        public virtual void Editar() { }
-
         public virtual void Excluir() { }
 
         public virtual void GerarRelatorio() { }

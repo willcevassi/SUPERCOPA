@@ -32,12 +32,6 @@ namespace SuperCopa.DesktopApp
             MessageBox.Show(this, "Clique do Botão Pesquisar Treinador");
         }
 
-        public override void Editar()
-        {
-            MessageBox.Show(this, "Clique do Botão Editar Treinador");
-        }
-
-
         public override void Salvar()
         {
             MessageBox.Show(this, "Clique do Botão Salvar Treinador");

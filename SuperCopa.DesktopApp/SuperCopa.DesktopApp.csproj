@@ -155,5 +155,11 @@
     <None Include="Icones\Times-48.png" />
     <None Include="Icones\Treinador-48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SuperCopa.Controller\SuperCopa.Controller.csproj">
+      <Project>{a12a2874-a617-4280-8408-bf50355804da}</Project>
+      <Name>SuperCopa.Controller</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

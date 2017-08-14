@@ -32,12 +32,6 @@ namespace SuperCopa.DesktopApp
             MessageBox.Show(this, "Clique do Botão Pesquisar Competição");
         }
 
-        public override void Editar()
-        {
-            MessageBox.Show(this, "Clique do Botão Editar Competição");
-        }
-
-
         public override void Salvar()
         {
             MessageBox.Show(this, "Clique do Botão Salvar Competição");

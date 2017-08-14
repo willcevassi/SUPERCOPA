@@ -9,7 +9,6 @@ namespace SuperCopa.DesktopApp
     public interface ICrud
     {
         void Novo();
-        void Editar();
         void Excluir();
         void Pesquisar();
         void Salvar();

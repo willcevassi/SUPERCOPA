@@ -49,62 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agente.cs">
-      <DependentUpon>SuperCopaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Equipe.cs">
-      <DependentUpon>SuperCopaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Jogador.cs">
-      <DependentUpon>SuperCopaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Posicao.cs">
-      <DependentUpon>SuperCopaModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Agente.cs" />
+    <Compile Include="Equipe.cs" />
+    <Compile Include="Jogador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SuperCopaModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SuperCopaModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SuperCopaModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SuperCopaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SuperCopaModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SuperCopaModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Treinador.cs">
-      <DependentUpon>SuperCopaModel.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="SuperCopaModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SuperCopaModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <Compile Include="SuperCopaModel.cs" />
+    <Compile Include="Treinador.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="SuperCopaModel.edmx.diagram">
-      <DependentUpon>SuperCopaModel.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SuperCopaModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SuperCopaModel.Context.cs</LastGenOutput>
-      <DependentUpon>SuperCopaModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="SuperCopaModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SuperCopaModel.cs</LastGenOutput>
-      <DependentUpon>SuperCopaModel.edmx</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -1,28 +1,45 @@
 ﻿using System;
 using System.Data.Entity;
+using SuperCopa.Controller.DTO;
+using SuperCopa.Modelo;
 
 namespace SuperCopa.Controller.DAL
 {
-    public class JogadorDAL<T> : GenericDAL<SuperCopa.Modelo.Jogador>
+    public class JogadorDAL : GenericDAL<JogadorDTO>
     {
 
-        public override bool Salvar(SuperCopa.Modelo.Jogador jogador)
+        public override bool Salvar(JogadorDTO dto)
         {
             try
             {
-                if (ValidaCampos(jogador))
+                if (ValidaCampos(dto))
                 {
-                    //Se id > 0, então é uma atualização
-                    if (jogador.Id > 0)
+
+                    Jogador modelo = new Jogador();
+                    modelo.Id = dto.Id;
+                    modelo.Agente = new Agente()
                     {
-                        dbcontext.JogadoresSet.Add(jogador);
-                        dbcontext.Entry(jogador).CurrentValues.SetValues(jogador);
-                        dbcontext.Entry(jogador).State = EntityState.Modified;
+                        Nome = dto.Nome,
+                        Telefone = dto.Telefone,
+                        Endereco = dto.Endereco
+                    };
+                    modelo.PosicaoPrincipal = dto.PosicaoPrincipal;
+                    //modelo.Equipe = new Equipe
+                    //{
+                    //    Id = dto.EquipeDTO.Id,
+                    //    Nome = dto.EquipeDTO.Nome
+                    //};
+                    //Se id > 0, então é uma atualização
+                    if (dto.Id > 0)
+                    {
+                        dbcontext.Jogadores.Add(modelo);
+                        dbcontext.Entry(modelo).CurrentValues.SetValues(modelo);
+                        dbcontext.Entry(modelo).State = EntityState.Modified;
                     }
                     else
                     {
                         //senão, está inserindo
-                        dbcontext.JogadoresSet.Add(jogador);
+                        dbcontext.Jogadores.Add(modelo);
                     }
                     dbcontext.SaveChanges();
 
@@ -36,6 +53,53 @@ namespace SuperCopa.Controller.DAL
                 return false;
             }
         }
+
+
+        //public override bool Save(AlunoDTO o)
+        //{
+        //    try
+        //    {
+        //        if (ValidaCampos(o))
+        //        {
+        //            ALUNO alunoModel = new ALUNO();
+
+        //            alunoModel.idAluno = o.idAluno;
+        //            alunoModel.idPessoa = o.idPessoa;
+        //            alunoModel.PESSOA = new PESSOA()
+        //            {
+        //                idPessoa = o.idPessoa,
+        //                nomePessoa = o.pessoa.nomePessoa,
+        //                endereco = o.pessoa.endereco,
+        //                dataNascimento = o.pessoa.dataNascimento
+        //            };
+        //            alunoModel.cargo = o.cargo;
+
+        //            //se tem código preenchido, está atualizando
+        //            if (o.idAluno > 0)
+        //            {
+        //                db.ALUNO.Attach(alunoModel);
+        //                db.Entry(alunoModel).CurrentValues.SetValues(alunoModel);
+        //                db.Entry(alunoModel).State = EntityState.Modified;
+        //            }
+        //            else
+        //            {
+        //                //senão, está inserindo
+        //                db.ALUNO.Add(alunoModel);
+        //            }
+
+        //            db.SaveChanges();
+        //        }
+        //        else
+        //            return false;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        mensagens.Add(ex.Message);
+        //        return false;
+        //    }
+
+        //    return true;
+        //}
 
         //public override AlunoDTO GetById(int id)
         //{

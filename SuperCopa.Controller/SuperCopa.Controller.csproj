@@ -49,6 +49,9 @@
   <ItemGroup>
     <Compile Include="DAL\GenericDAL.cs" />
     <Compile Include="DAL\JogadorDAL.cs" />
+    <Compile Include="DTO\EquipeDTO.cs" />
+    <Compile Include="DTO\JogadorDTO.cs" />
+    <Compile Include="DTO\TreinadorDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SuperCopa.Modelo;
 
 namespace SuperCopa.Controller.DAL
 {
 
     public abstract class GenericDAL<T>
     {
-        protected SuperCopa.Modelo.SuperCopaModelContainer dbcontext;
-        protected List<String> _mensagens;
+        protected SuperCopaModel dbcontext;
+        public List<String> _mensagens;
 
         protected GenericDAL()
         {
-            this.dbcontext = new Modelo.SuperCopaModelContainer();
+            this.dbcontext = new Modelo.SuperCopaModel();
             this._mensagens = new List<string>();
         }
 
