@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="SuperCopaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="SuperCopaModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SuperCopaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="SuperCopaModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AgenteSet" EntityType="SuperCopaModel.Agente" />
+          <EntitySet Name="EquipeSet" EntityType="SuperCopaModel.Equipe" />
+          <AssociationSet Name="TreinadorEquipe" Association="SuperCopaModel.TreinadorEquipe">
+            <End Role="Treinador" EntitySet="AgenteSet" />
+            <End Role="Equipe" EntitySet="EquipeSet" />
+          </AssociationSet>
+          <AssociationSet Name="JogadorEquipe" Association="SuperCopaModel.JogadorEquipe">
+            <End Role="Jogador" EntitySet="AgenteSet" />
+            <End Role="Equipe" EntitySet="EquipeSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Agente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" />
+          <Property Name="Endereco" Type="String" MaxLength="255" Nullable="true" />
+          <Property Name="Telefone" Type="String" Nullable="true" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Jogador" BaseType="SuperCopaModel.Agente" >
+          <Property Name="PosicaoPrincipal" Type="SuperCopaModel.Posicao" Nullable="false" />
+          <NavigationProperty Name="Equipe" Relationship="SuperCopaModel.JogadorEquipe" FromRole="Jogador" ToRole="Equipe" />
+        </EntityType>
+        <EnumType Name="Posicao">
+          <Member Name="Atacante" />
+          <Member Name="Zagueiro" />
+          <Member Name="Goleiro" />
+          <Member Name="LateralEsquerdo" />
+          <Member Name="LateralDireiro" />
+          <Member Name="MeioCampo" />
+          <Member Name="CentroAvante" />
+        </EnumType>
+        <EntityType Name="Treinador" BaseType="SuperCopaModel.Agente" >
+          <NavigationProperty Name="Equipe" Relationship="SuperCopaModel.TreinadorEquipe" FromRole="Treinador" ToRole="Equipe" />
+        </EntityType>
+        <EntityType Name="Equipe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" />
+          <NavigationProperty Name="Treinador" Relationship="SuperCopaModel.TreinadorEquipe" FromRole="Equipe" ToRole="Treinador" />
+          <Property Name="TreinadorId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Jogadores" Relationship="SuperCopaModel.JogadorEquipe" FromRole="Equipe" ToRole="Jogador" />
+        </EntityType>
+        <Association Name="TreinadorEquipe">
+          <End Type="SuperCopaModel.Treinador" Role="Treinador" Multiplicity="0..1" />
+          <End Type="SuperCopaModel.Equipe" Role="Equipe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Treinador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipe">
+              <PropertyRef Name="TreinadorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="JogadorEquipe">
+          <End Type="SuperCopaModel.Jogador" Role="Jogador" Multiplicity="*" />
+          <End Type="SuperCopaModel.Equipe" Role="Equipe" Multiplicity="0..1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="SuperCopaModel" />
+        <Alias Key="Target" Value="SuperCopaModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="SuperCopaModelContainer" StorageEntityContainer="SuperCopaModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
