@@ -12,8 +12,7 @@
         <InheritanceConnector EntityType="SuperCopaModel.Treinador" />
         <EntityTypeShape EntityType="SuperCopaModel.Equipe" Width="1.5" PointX="6.625" PointY="4.875" />
         <AssociationConnector Association="SuperCopaModel.TreinadorEquipe" />
-        <AssociationConnector Association="SuperCopaModel.JogadorEquipe" ManuallyRouted="false" >
-        </AssociationConnector>
+        <AssociationConnector Association="SuperCopaModel.EquipeJogador" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
