@@ -26,6 +26,8 @@ namespace SuperCopa.Modelo
         }
     
         public virtual DbSet<Agente> AgenteSet { get; set; }
-        public virtual DbSet<Equipe> EquipeSet { get; set; }
+        public virtual DbSet<Jogador> JogadoresSet { get; set; }
+        public virtual DbSet<Treinador> TreinadoresSet { get; set; }
+        public virtual DbSet<Equipe> EquipesSet { get; set; }
     }
 }
