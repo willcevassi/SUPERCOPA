@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4EB3ABFD-5F8A-48DE-8D7D-D1453B77293D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SuperCopa.DesktopApp</RootNamespace>
+    <AssemblyName>SuperCopa.DesktopApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmBaseCadastros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaseCadastros.Designer.cs">
+      <DependentUpon>FrmBaseCadastros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCompeticoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCompeticoes.Designer.cs">
+      <DependentUpon>FrmCompeticoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEquipes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEquipes.Designer.cs">
+      <DependentUpon>FrmEquipes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJogadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJogadores.Designer.cs">
+      <DependentUpon>FrmJogadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPartidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPartidas.Designer.cs">
+      <DependentUpon>FrmPartidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTreinadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTreinadores.Designer.cs">
+      <DependentUpon>FrmTreinadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ICrud.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBaseCadastros.resx">
+      <DependentUpon>FrmBaseCadastros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompeticoes.resx">
+      <DependentUpon>FrmCompeticoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEquipes.resx">
+      <DependentUpon>FrmEquipes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmJogadores.resx">
+      <DependentUpon>FrmJogadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPartidas.resx">
+      <DependentUpon>FrmPartidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTreinadores.resx">
+      <DependentUpon>FrmTreinadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icones\Fechar.png" />
+    <None Include="Icones\Relatorio.png" />
+    <None Include="Icones\Cancelar.png" />
+    <None Include="Icones\Salvar.png" />
+    <None Include="Icones\Excluir.png" />
+    <None Include="Icones\Editar.png" />
+    <None Include="Icones\Novo.png" />
+    <None Include="Icones\Pesquisar.png" />
+    <None Include="Icones\Salvar-48.png" />
+    <None Include="Icones\Editar-48.png" />
+    <None Include="Icones\Novo-48.png" />
+    <None Include="Icones\ExcluirRegistro-48.png" />
+    <None Include="Icones\Exluir_16.png" />
+    <None Include="Icones\Sair-48.png" />
+    <None Include="Icones\Jogos-48.png" />
+    <None Include="Icones\Competicao-48.png" />
+    <Content Include="Icones\Jogadores-48.png" />
+    <None Include="Icones\Times-48.png" />
+    <None Include="Icones\Treinador-48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
